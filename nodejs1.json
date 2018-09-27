@@ -1,0 +1,38 @@
+{
+	"question": {
+		"1": "When to use Node.js?",
+		"2": "Why Node.js is better?"
+	},
+	"tags": {
+		"primary": [
+			"node.js",
+			"web application",
+			"Single thread", "event loop"
+		],
+		"secondary": [
+			"decision",
+			"When",
+			"Where"
+		]
+	},
+	"codesnippet": {},
+	"answer": {
+		"summary": "Receiving a request and either serving static/simple content or delegating it to an I/O thread from a thread pool are both very cheap and quick operations. When the thread pool thread that is doing the long-running I/O work signals to the single listener thread that the work is done, the listener thread picks up the response and sends it back to the user; this is another very cheap operation. The core idea is that the single listener thread never blocks: it only does fast, cheap processing or delegation of requests to other threads and the serving of responses to clients",
+		"Considerations for Node.js": {
+			"option1": "JavaScript (both client and server side written on Node.js)",
+			"option2": "High number of calls with lightweight calls/ low CPU cycles (In other words, Non blocking I/O operations)",
+			"option3": "Single Threaded Event Driven",
+			"option4": "Google's V8 Javascript Engine",
+			"option5": "Avoid complexity of multithreading"
+		},
+		"Avoid Node.js for": {
+			"option1": "Long running process",
+			"option2": "Heavy CPU operations",
+			"option3": "Single threaded by default, doesn's use the CPU cores"
+		}
+	},
+	"links": [
+		"http://blog.mixu.net/2011/02/01/understanding-the-node-js-event-loop/",
+		"https://stackoverflow.com/questions/5062614/how-to-decide-when-to-use-node-js"
+	]
+}
